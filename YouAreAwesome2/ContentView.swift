@@ -8,15 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var messageString = ""
+    @State private var messageString = "Namaste"
     
     var body: some View {
-        
         
         VStack {
             
             Spacer()
             
+            Image(systemName: "speaker.wave.2", variableValue: 0.56)
+                .resizable()
+                .scaledToFit()
+                .symbolRenderingMode(.multicolor)
+                .padding()
+                .background(Color(hue: 0.485, saturation: 0.408, brightness: 0.92))
+//                .clipShape(Circle())
+                .cornerRadius(30.0)
+                .shadow(color: .gray, radius: 30, x: 20, y: 20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(.teal, lineWidth: 1)
+                )
+                .padding()
+ 
+                         
             Text(messageString)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
@@ -26,6 +41,7 @@ struct ContentView: View {
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
                 .padding()
+                
             
             Spacer()
             
@@ -47,7 +63,6 @@ struct ContentView: View {
             .padding()
             
         }  // VStack
-        
         
         
     }
